@@ -45,3 +45,22 @@ for i in range(len(words)):
             next_word.append(text[e+1])
     word_connections.append(next_word)
 
+#Generating a delusional text.
+number_sentence = int(input('Введите количество предложений для генирации текста: '))
+for i in range(0, number_sentence):
+    x = random.randint(0, len(start_list)-1)
+    sentence = start_list[x]
+    x = words.index(sentence)
+    for e in range (19):
+        if len(word_connections[x])>0:
+            b = random.randint(0, len(word_connections[x])-1)
+        else:
+            b = 0
+        sentence += ' ' + str(word_connections[x][b])
+        if '.' in word_connections[b]:
+            break
+        if e == 18:
+            sentence += '.'
+        x = words.index(word_connections[x][b])
+    print(sentence)
+
