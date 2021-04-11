@@ -55,15 +55,15 @@ with open('output.txt', 'w') as f_out:
         sentence = start_list[x]
         x = words.index(sentence)
         for e in range (19):
-            if len(word_connections[x]) > 2:
-                b = random.randint(0, len(word_connections[x])-1)
+            if len(word_connections[x]) > 1:
+                b = random.randint(1, len(word_connections[x])-1)
             else:
-                b = 0
-            sentence += ' ' + str(word_connections[x][b])
-            if '.' in word_connections[b]:
+                b = 1
+            sentence += ' ' + str(word_connections[x][b-1])
+            if '.' in word_connections[b-1]:
                 break
             elif e == 18:
                 sentence += '.'
-            x = words.index(word_connections[x][b])
+            x = words.index(word_connections[x][b-1])
         print(sentence, end = ' ', file = f_out)
 
