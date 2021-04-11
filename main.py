@@ -24,7 +24,7 @@ for i in text:
     else:
         continue
 
-text = t.split(' ')
+text = text.split(' ')
 
 #Create a list of unique words.
 words = []
