@@ -60,7 +60,7 @@ with open('output.txt', 'w') as f_out:
             else:
                 b = 1
             sentence += ' ' + str(word_connections[x][b-1])
-            if '.' in word_connections[b-1]:
+            if '.' in word_connections[x][b - 1]:
                 break
             elif e == 18:
                 sentence += '.'
