@@ -6,6 +6,7 @@ Developers:   Ignatovich D. (60%),
 import re
 import random
 
+#Reading text from a file.
 def open_initial_text():
     with open('input.txt', "r") as f_in:
         initial_text = ''
@@ -14,6 +15,7 @@ def open_initial_text():
             initial_text += lines
     return initial_text
   
+#Removing unnecessary characters.
 text = open_initial_text()
 text = re.sub(r'\s+(?=(?:[,.?!:;… -;:]))', r'', text)
 marks = '''()-[]{};@#$%:'"\/^&amp;*_'''
